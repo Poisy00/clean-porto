@@ -1,0 +1,44 @@
+{
+  "_meta": {
+    "models": {
+      "manifesto": "The closing statement displayed below the triptych - the philosophical anchor of the section.",
+      "pillars": "Each pillar represents a core identity principle displayed as a floating glass monolith. Contains the headline, icon type, and description revealed on click."
+    },
+    "relationships": [
+      "Pillars are displayed in order (01, 02, 03) as the three monoliths",
+      "The manifesto stands alone as the section's closing tagline"
+    ]
+  },
+  "manifesto": {
+    "tagline": "We do not sacrifice usability for aesthetics. We use aesthetics to enforce usability."
+  },
+  "pillars": [
+    {
+      "id": "rigor",
+      "number": "01",
+      "label": "THE RIGOR",
+      "category": "Engineering",
+      "headline": "SYSTEMS ARCHITECTURE",
+      "iconType": "wireframe-cube",
+      "description": "Beauty without structure is decoration. My foundation is built on cryptographic security (Node/HMAC), scalable infrastructure, and type-safe reliability. I don't just write code; I engineer distinct, crash-proof ecosystems."
+    },
+    {
+      "id": "soul",
+      "number": "02",
+      "label": "THE SOUL",
+      "category": "Design",
+      "headline": "TACTILE ETHEREALISM",
+      "iconType": "liquid-drop",
+      "description": "Software should feel physical. I reject static pixels in favor of 'Living Interfaces' - environments that breathe, react to touch, and use motion physics to guide the user's intuition. We turn 'users' into 'operators'."
+    },
+    {
+      "id": "outcome",
+      "number": "03",
+      "label": "THE OUTCOME",
+      "category": "Business",
+      "headline": "HIGH-VELOCITY IMPACT",
+      "iconType": "arrow-target",
+      "description": "The 'Reactionary Gap' kills conversion. I bridge the divide between complex data and human perception. The result is not just a pretty website, but a high-performance conversion engine that commands authority."
+    }
+  ]
+}

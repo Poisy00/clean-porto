@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "models": {
+      "consultationRequests": "Each consultation request represents an inquiry submitted through the booking flow - capturing who they are, what they need, and when they'd like to talk.",
+      "formConfig": "Configuration for the stepped form including project types, budget ranges, and discovery sources that appear as options."
+    },
+    "relationships": [
+      "Each ConsultationRequest captures one complete form submission",
+      "The formConfig defines the options available for project type, budget, and discovery source fields"
+    ]
+  },
+  "consultationRequests": [
+    {
+      "id": "req-001",
+      "personName": "Marcus Chen",
+      "projectName": "Luminary Analytics",
+      "projectDescription": "We're building an AI-powered analytics platform for e-commerce brands. Need a complete dashboard experience with real-time data visualization, custom reporting modules, and a clean onboarding flow. Looking for someone who can handle complex data displays while keeping the UX intuitive.",
+      "projectType": "dashboard",
+      "budgetRange": "25k-30k",
+      "discoverySource": "referral",
+      "preferredDate": "2024-02-15",
+      "submittedAt": "2024-01-28T14:32:00Z"
+    },
+    {
+      "id": "req-002",
+      "personName": "Sofia Andersson",
+      "projectName": "Greenhouse",
+      "projectDescription": "Climate tech SaaS for carbon footprint tracking. We have the backend ready but need the entire frontend built - user dashboard, admin panel, and public-facing marketing site.",
+      "projectType": "full-system",
+      "budgetRange": "30k-plus",
+      "discoverySource": "social-media",
+      "preferredDate": "2024-02-20",
+      "submittedAt": "2024-01-30T09:15:00Z"
+    },
+    {
+      "id": "req-003",
+      "personName": "Jordan Blake",
+      "projectName": "Pulse",
+      "projectDescription": "Health and wellness app landing page. Need something bold that stands out from the typical calm/zen aesthetic in this space.",
+      "projectType": "landing-page",
+      "budgetRange": "5k-10k",
+      "discoverySource": "google-search",
+      "preferredDate": "2024-02-08",
+      "submittedAt": "2024-01-25T16:45:00Z"
+    },
+    {
+      "id": "req-004",
+      "personName": "Elena Voss",
+      "projectName": "Nexus Protocol",
+      "projectDescription": "Web3 infrastructure SaaS. Developer-focused tooling for smart contract deployment and monitoring. Technical audience, needs to feel powerful but not intimidating.",
+      "projectType": "saas",
+      "budgetRange": "20k-25k",
+      "discoverySource": "referral",
+      "preferredDate": "2024-02-12",
+      "submittedAt": "2024-01-29T11:20:00Z"
+    }
+  ],
+  "formConfig": {
+    "projectTypes": [
+      { "id": "saas", "label": "SaaS" },
+      { "id": "landing-page", "label": "Landing Page" },
+      { "id": "dashboard", "label": "Dashboard" },
+      { "id": "full-system", "label": "Full System" }
+    ],
+    "budgetRanges": [
+      { "id": "under-5k", "label": "Under $5K" },
+      { "id": "5k-10k", "label": "$5K - $10K" },
+      { "id": "10k-15k", "label": "$10K - $15K" },
+      { "id": "15k-20k", "label": "$15K - $20K" },
+      { "id": "20k-25k", "label": "$20K - $25K" },
+      { "id": "25k-30k", "label": "$25K - $30K" },
+      { "id": "30k-plus", "label": "$30K+" }
+    ],
+    "discoverySources": [
+      { "id": "social-media", "label": "Social Media" },
+      { "id": "referral", "label": "Referral" },
+      { "id": "google-search", "label": "Google Search" }
+    ],
+    "steps": [
+      { "id": 1, "field": "personName", "label": "What's your name?", "placeholder": "Your full name" },
+      { "id": 2, "field": "projectName", "label": "What's your project called?", "placeholder": "Project or company name" },
+      { "id": 3, "field": "projectDescription", "label": "Tell me about your project", "placeholder": "Describe what you're building and any specific requirements..." },
+      { "id": 4, "field": "projectType", "label": "What type of project is this?" },
+      { "id": 5, "field": "budgetRange", "label": "What's your budget range?" },
+      { "id": 6, "field": "discoverySource", "label": "How did you find POISY?" },
+      { "id": 7, "field": "preferredDate", "label": "When would you like to chat?" }
+    ]
+  },
+  "thankYouContent": {
+    "heading": "Message Received",
+    "subheading": "I'll be in touch within 24 hours to confirm our conversation.",
+    "note": "In the meantime, feel free to explore the work."
+  }
+}

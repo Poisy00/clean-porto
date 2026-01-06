@@ -1,0 +1,66 @@
+{
+  "title": "INDUSTRIAL PRECISION",
+  "subtitle": "SYSTEM_STATUS: OPERATIONAL // A collection of high-velocity digital artifacts.",
+  "projects": [
+    {
+      "id": "01",
+      "title": "OBSIDIAN APEX",
+      "description": "System Profile: High-velocity analytics engine for dark-pool liquidity aggregation. Implements sub-millisecond data visualization pipelines.",
+      "tech": ["REACT", "TAILWIND", "D3.JS"],
+      "year": "2024",
+      "role": "LEAD ARCHITECT",
+      "color": "violet",
+      "image": "/images/obsidian-preview.jpg"
+    },
+    {
+      "id": "02",
+      "title": "LUMINA X1",
+      "description": "System Profile: IoT synchronization protocol for residential ambient computing environments. Features real-time websocket state management.",
+      "tech": ["NEXT.JS", "MOTION", "IOT"],
+      "year": "2024",
+      "role": "UI DESIGN",
+      "color": "amber",
+      "image": "/images/lumina-preview.jpg"
+    },
+    {
+      "id": "03",
+      "title": "INVO",
+      "description": "System Profile: Automated inventory heuristic model for large-scale supply chain logistics. Optimizes warehouse throughput via heuristic algorithms.",
+      "tech": ["RUST", "WASM", "REACT"],
+      "year": "2023",
+      "role": "FRONTEND",
+      "color": "emerald",
+      "image": "/images/invo-preview.jpg"
+    },
+    {
+      "id": "04",
+      "title": "OSTROVALE",
+      "description": "System Profile: Generative floral morphology simulator for digital horticulture research. Utilizes WebGL for organic structural growth.",
+      "tech": ["THREE.JS", "WEBGL", "VUE"],
+      "year": "2022",
+      "role": "FULL STACK",
+      "color": "rose",
+      "image": "/images/ostrovale-preview.jpg"
+    },
+    {
+      "id": "05",
+      "title": "ZCFAQ",
+      "description": "System Profile: Knowledge retrieval lattice for decentralized technical documentation. Semantic search architecture with vector embeddings.",
+      "tech": ["PYTHON", "TYPESCRIPT", "AI"],
+      "year": "2023",
+      "role": "CREATIVE DEV",
+      "color": "sky",
+      "image": "/images/zcfaq-preview.jpg"
+    },
+    {
+      "id": "06",
+      "title": "SAYNIAN",
+      "description": "System Profile: Natural language processing interface for cognitive load management. Adaptive UI patterns based on user stress metrics.",
+      "tech": ["NLP", "REACT", "NODE"],
+      "year": "2022",
+      "role": "UX LEAD",
+      "color": "indigo",
+      "image": "/images/saynian-preview.jpg"
+    }
+  ]
+}
