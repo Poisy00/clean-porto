@@ -40,7 +40,7 @@ export function PhilosophySection({ pillars, manifesto }: PhilosophySectionProps
       {/* Backdrop overlay when drawer is open */}
       {expandedId && (
         <div 
-          className="fixed inset-0 bg-black/20 z-10 cursor-pointer"
+          className="fixed inset-0 bg-transparent z-10 cursor-pointer"
           onClick={handleClickOutside}
           aria-hidden="true"
         />
