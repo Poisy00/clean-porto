@@ -10,8 +10,6 @@ export function Hero({ content, onCtaClick }: HeroProps) {
       className="relative h-screen w-full overflow-hidden bg-slate-50 dark:bg-slate-950 flex items-center justify-center selection:bg-sky-200 selection:text-slate-900"
     >
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Inter+Tight:wght@500;600&display=swap');
-        
         .bg-radial-gradient {
           background-image: radial-gradient(var(--tw-gradient-stops));
         }

@@ -355,8 +355,6 @@ export function ConsultationForm({
     <section className="relative min-h-screen flex flex-col overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
       {/* Google Fonts */}
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Inter+Tight:wght@500;600&family=Geist+Mono:wght@400&display=swap');
-        
         /* Radial gradient utility */
         .bg-gradient-radial {
           background-image: radial-gradient(var(--tw-gradient-stops));

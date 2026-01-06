@@ -68,6 +68,10 @@ export function GodRays() {
     
     const t = state.clock.getElapsedTime();
     
+    // Throttle updates to every 2nd frame for better performance
+    const frameIndex = Math.floor(t * 60);
+    if (frameIndex % 2 !== 0) return;
+    
     // Slow, majestic rotation of the entire halo
     if (groupRef.current) {
         groupRef.current.rotation.z = t * 0.02;

@@ -42,7 +42,7 @@ export function OrbCanvas({ className }: OrbCanvasProps) {
             alpha: true,
             toneMapping: NoToneMapping 
           }}
-          dpr={[1, 2]}
+          dpr={[1, 1.5]}
         >
           <Suspense fallback={null}>
              <Scene />

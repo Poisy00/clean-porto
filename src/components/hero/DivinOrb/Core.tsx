@@ -30,13 +30,13 @@ export function Core() {
       */}
       <MeshTransmissionMaterial
         backside
-        samples={16}
-        resolution={1024}
+        samples={4}
+        resolution={256}
         transmission={1}
         roughness={0.0}
         thickness={5.0}
         ior={1.5}
-        chromaticAberration={1.0}
+        chromaticAberration={0.5}
         anisotropy={1.0}
         distortion={0.6}
         distortionScale={0.5}
