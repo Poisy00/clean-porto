@@ -108,8 +108,8 @@ export function ArsenalCard({ project }: ArsenalCardProps) {
         {/* Title */}
         <div className="mb-4">
           <h3 className={cn(
-            "text-4xl font-black tracking-tighter uppercase mb-2",
-            "text-slate-800", 
+            "text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight uppercase mb-2",
+            "text-slate-900 dark:text-slate-100", 
             "transition-colors duration-300",
             colorMap.text
           )}>
@@ -123,7 +123,7 @@ export function ArsenalCard({ project }: ArsenalCardProps) {
         </div>
 
         {/* Description */}
-        <p className="text-sm font-medium leading-relaxed text-slate-600 mb-auto border-l-2 border-slate-300 pl-4 group-hover:border-slate-800 transition-colors">
+        <p className="text-sm font-medium leading-relaxed text-slate-600 dark:text-slate-400 mb-auto border-l-2 border-slate-300 dark:border-slate-700 pl-4 group-hover:border-slate-800 dark:group-hover:border-slate-200 transition-colors">
           {project.description}
         </p>
 
@@ -131,15 +131,15 @@ export function ArsenalCard({ project }: ArsenalCardProps) {
         <div className="mt-8 pt-6 border-t border-slate-200/20 flex items-center justify-between">
           <div className="flex flex-wrap gap-2">
             {project.tech.map((tech) => (
-              <span key={tech} className="text-[10px] uppercase tracking-widest font-bold text-slate-500 group-hover:text-slate-800 transition-colors">
+              <span key={tech} className="text-[10px] uppercase tracking-widest font-bold text-slate-500 dark:text-slate-400 group-hover:text-slate-800 dark:group-hover:text-slate-200 transition-colors">
                 {tech}
               </span>
             ))}
           </div>
           
           <div className={cn(
-            "w-10 h-10 flex items-center justify-center border border-slate-300",
-            "bg-transparent text-slate-400",
+            "w-10 h-10 flex items-center justify-center border border-slate-300 dark:border-slate-700",
+            "bg-transparent text-slate-400 dark:text-slate-500",
             "group-hover:bg-slate-800 group-hover:text-white group-hover:border-slate-800",
             "transition-all duration-300"
           )}>
