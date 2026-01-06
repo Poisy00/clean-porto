@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
+import { ThemeToggle } from './ThemeToggle'
 
 interface NavItem {
   label: string
@@ -101,8 +102,10 @@ export function AppShell({
               ))}
 
               {/* CTA Button */}
-              <a
-                href={ctaHref}
+              <div className="flex items-center gap-4">
+                <ThemeToggle />
+                <a
+                  href={ctaHref}
                 onClick={(e) => {
                   e.preventDefault()
                   handleNavClick(ctaHref)
@@ -111,17 +114,20 @@ export function AppShell({
               >
                 {ctaLabel}
               </a>
+              </div>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              type="button"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
-              aria-label="Toggle menu"
-            >
-              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+            <div className="flex items-center gap-2 md:hidden">
+              <ThemeToggle />
+              <button
+                type="button"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="p-2 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors"
+                aria-label="Toggle menu"
+              >
+                {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu */}
