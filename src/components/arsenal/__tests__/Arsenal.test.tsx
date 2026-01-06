@@ -29,8 +29,8 @@ describe('ArsenalGrid Component', () => {
   it('renders section headers correctly', () => {
     render(<ArsenalGrid projects={mockProjects} />)
     
-    expect(screen.getByText('INDUSTRIAL PRECISION')).toBeDefined()
-    expect(screen.getByText(/SYSTEM_STATUS: OPERATIONAL/)).toBeDefined()
+    expect(screen.getByText('DIVINE ARCHITECTURE')).toBeDefined()
+    expect(screen.getByText(/REALM STATUS: ASCENDANT/)).toBeDefined()
   })
 
   it('renders all projects', () => {
@@ -54,7 +54,7 @@ describe('ArsenalGrid Component', () => {
 
   it('renders correctly with empty project list', () => {
     render(<ArsenalGrid projects={[]} />)
-    expect(screen.getByText('INDUSTRIAL PRECISION')).toBeDefined()
+    expect(screen.getByText('DIVINE ARCHITECTURE')).toBeDefined()
     // Should not crash
   })
 })

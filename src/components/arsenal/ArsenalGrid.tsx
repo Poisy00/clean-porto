@@ -9,21 +9,29 @@ interface ArsenalGridProps {
 
 export function ArsenalGrid({ 
   projects, 
-  title = "INDUSTRIAL PRECISION", 
-  subtitle = "SYSTEM_STATUS: OPERATIONAL" 
+  title = "DIVINE ARCHITECTURE", 
+  subtitle = "REALM STATUS: ASCENDANT" 
 }: ArsenalGridProps) {
   return (
     <div className="mx-auto max-w-7xl px-6 py-24">
-      {/* Industrial Header */}
-      <div className="mb-32">
-        <div className="flex flex-col border-l-4 border-slate-900 pl-8 py-2">
-          <span className="font-mono text-xs text-slate-500 tracking-[0.3em] uppercase mb-4 block">
-            {subtitle}
-          </span>
-          <h2 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tighter uppercase leading-[0.9]">
-            {title}
-          </h2>
-        </div>
+      {/* Angelic Header */}
+      <div className="mb-32 relative flex flex-col items-center text-center">
+        {/* Ambient Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60%] h-[150%] bg-sky-200/20 dark:bg-indigo-900/20 blur-[100px] -z-10 rounded-full opacity-50 pointer-events-none" />
+
+        {/* Decorative Vertical Line */}
+        <div className="h-24 w-px bg-gradient-to-b from-transparent via-slate-400/50 dark:via-slate-500/50 to-transparent mb-8" />
+
+        <span className="font-mono text-[10px] text-slate-500 dark:text-slate-400 tracking-[0.4em] uppercase mb-6 opacity-80 mix-blend-plus-lighter">
+          {subtitle}
+        </span>
+        
+        <h2 className="text-5xl md:text-8xl font-light font-heading text-slate-900 dark:text-slate-100 tracking-tighter uppercase leading-[0.9] drop-shadow-lg">
+          {title}
+        </h2>
+        
+        {/* Subtle Underline/Separator */}
+        <div className="mt-12 w-24 h-px bg-gradient-to-r from-transparent via-slate-300 dark:via-slate-700 to-transparent" />
       </div>
 
       {/* Suspended Grid */}

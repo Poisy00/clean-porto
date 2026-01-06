@@ -17,8 +17,8 @@ export interface ArsenalData {
 }
 
 export const arsenalData: ArsenalData = {
-  title: "INDUSTRIAL PRECISION",
-  subtitle: "SYSTEM_STATUS: OPERATIONAL // A collection of high-velocity digital artifacts.",
+  title: "DIVINE ARCHITECTURE",
+  subtitle: "REALM STATUS: ASCENDANT // A curation of ethereal digital constructs.",
   projects: [
     {
       id: "01",
