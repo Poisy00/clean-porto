@@ -76,6 +76,139 @@ function OptionButton({ label, isSelected, onClick }: OptionButtonProps) {
 }
 
 // ============================================================================
+// ANIMATION STYLES
+// ============================================================================
+
+const animationStyles = `
+  /* Radial gradient utility */
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+  
+  /* Ascending transition */
+  @keyframes ascend-in {
+    0% { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  @keyframes draw-check {
+    0% {
+      stroke-dashoffset: 100;
+      opacity: 0;
+    }
+    100% {
+      stroke-dashoffset: 0;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes circle-pop {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    60% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes ripple-effect {
+    0% {
+      transform: scale(0.8);
+      opacity: 0.6;
+      border-width: 2px;
+    }
+    100% {
+      transform: scale(2);
+      opacity: 0;
+      border-width: 0px;
+    }
+  }
+
+  .animate-draw-check {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: draw-check 0.8s cubic-bezier(0.65, 0, 0.35, 1) 0.4s forwards;
+  }
+  
+  .animate-circle-pop {
+    animation: circle-pop 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  .animate-ripple {
+    animation: ripple-effect 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s infinite;
+  }
+
+  @keyframes ascend-out {
+    0% { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+    100% { 
+      opacity: 0; 
+      transform: translateY(-30px); 
+    }
+  }
+  
+  @keyframes descend-in {
+    0% { 
+      opacity: 0; 
+      transform: translateY(-30px); 
+    }
+    100% { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+  }
+  
+  @keyframes descend-out {
+    0% { 
+      opacity: 1; 
+      transform: translateY(0); 
+    }
+    100% { 
+      opacity: 0; 
+      transform: translateY(30px); 
+    }
+  }
+  
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out forwards;
+  }
+  
+  .step-enter {
+    animation: ascend-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  
+  .step-exit-forward {
+    animation: ascend-out 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
+  }
+  
+  .step-enter-back {
+    animation: descend-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  }
+  
+  .step-exit-back {
+    animation: descend-out 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
+  }
+`
+
+// ============================================================================
 // MAIN COMPONENT
 // ============================================================================
 
@@ -301,6 +434,7 @@ export function ConsultationForm({
   if (isSubmitted) {
     return (
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
+        <style>{animationStyles}</style>
         {/* Ethereal background effects */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vh] bg-gradient-radial from-sky-200/30 via-transparent to-transparent dark:from-sky-900/20 rounded-full blur-3xl" />
@@ -312,20 +446,30 @@ export function ConsultationForm({
           <div className="mb-14 flex justify-center">
             <div className="relative">
               {/* Outer glow ring */}
-              <div className="absolute -inset-4 rounded-full bg-amber-500/20 blur-xl" />
+              <div className="absolute -inset-4 rounded-full bg-amber-500/20 blur-xl animate-pulse" />
               <div className="absolute -inset-2 rounded-full bg-amber-400/30 blur-md" />
               
+              {/* Ripple effects */}
+              <div className="absolute inset-0 rounded-full border-amber-400/50 animate-ripple" />
+              <div className="absolute inset-0 rounded-full border-amber-300/30 animate-ripple" style={{ animationDelay: '0.6s' }} />
+              
               {/* Main circle */}
-              <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-2xl shadow-amber-500/40 flex items-center justify-center">
+              <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-amber-400 to-amber-600 shadow-2xl shadow-amber-500/40 flex items-center justify-center animate-circle-pop">
                 {/* Surface shine */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-b from-white/25 via-transparent to-transparent" />
                 
-                {/* Checkmark icon */}
-                <Check 
+                {/* Animated Checkmark SVG */}
+                <svg 
                   className="relative z-10 w-12 h-12 md:w-14 md:h-14 drop-shadow-lg" 
-                  strokeWidth={3}
-                  color="white"
-                />
+                  viewBox="0 0 24 24" 
+                  fill="none" 
+                  stroke="white" 
+                  strokeWidth="3" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round"
+                >
+                  <polyline points="20 6 9 17 4 12" className="animate-draw-check" />
+                </svg>
               </div>
             </div>
           </div>
@@ -354,82 +498,7 @@ export function ConsultationForm({
   return (
     <section className="relative min-h-screen flex flex-col overflow-hidden bg-gradient-to-b from-slate-50 via-white to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950">
       {/* Google Fonts */}
-      <style>{`
-        /* Radial gradient utility */
-        .bg-gradient-radial {
-          background-image: radial-gradient(var(--tw-gradient-stops));
-        }
-        
-        /* Ascending transition */
-        @keyframes ascend-in {
-          0% { 
-            opacity: 0; 
-            transform: translateY(30px); 
-          }
-          100% { 
-            opacity: 1; 
-            transform: translateY(0); 
-          }
-        }
-        
-        @keyframes ascend-out {
-          0% { 
-            opacity: 1; 
-            transform: translateY(0); 
-          }
-          100% { 
-            opacity: 0; 
-            transform: translateY(-30px); 
-          }
-        }
-        
-        @keyframes descend-in {
-          0% { 
-            opacity: 0; 
-            transform: translateY(-30px); 
-          }
-          100% { 
-            opacity: 1; 
-            transform: translateY(0); 
-          }
-        }
-        
-        @keyframes descend-out {
-          0% { 
-            opacity: 1; 
-            transform: translateY(0); 
-          }
-          100% { 
-            opacity: 0; 
-            transform: translateY(30px); 
-          }
-        }
-        
-        @keyframes fade-in {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
-        }
-        
-        .animate-fade-in {
-          animation: fade-in 0.5s ease-out forwards;
-        }
-        
-        .step-enter {
-          animation: ascend-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-        }
-        
-        .step-exit-forward {
-          animation: ascend-out 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
-        }
-        
-        .step-enter-back {
-          animation: descend-in 0.6s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
-        }
-        
-        .step-exit-back {
-          animation: descend-out 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
-        }
-      `}</style>
+      <style>{animationStyles}</style>
 
       {/* Ethereal background effects */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
