@@ -81,11 +81,16 @@ export function ArsenalCard({ project }: ArsenalCardProps) {
 
       {/* --- THE FROST LAYER (Idle State) --- */}
       {/* This layer sits ON TOP of the content when idle, blurring it. 
-          On hover, it fades away to reveal the clear content. */}
+          On hover, it fades away to reveal the clear content. 
+          Modified for Mobile: Hidden by default on small screens (< lg). */}
       <div className={cn(
-        "absolute inset-0 z-20 bg-stone-900/10 backdrop-blur-md grayscale",
-        "transition-all duration-500 ease-out",
-        "group-hover:backdrop-blur-none group-hover:grayscale-0 group-hover:bg-transparent group-hover:pointer-events-none"
+        "absolute inset-0 z-20 transition-all duration-500 ease-out",
+        // Mobile/Default: Transparent, no blur, events pass through
+        "bg-transparent backdrop-blur-none grayscale-0 pointer-events-none",
+        // Desktop: Frosty, blocking events
+        "lg:bg-stone-900/10 lg:backdrop-blur-md lg:grayscale lg:pointer-events-auto",
+        // Desktop Hover: Reveal
+        "lg:group-hover:backdrop-blur-none lg:group-hover:grayscale-0 lg:group-hover:bg-transparent lg:group-hover:pointer-events-none"
       )} />
 
       {/* --- GLASS SURFACE (Always visible base) --- */}

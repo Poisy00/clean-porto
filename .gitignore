@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+.vercel
+
+# local tools and artifacts
+gh.zip
+github_token.txt
+bin/
+nul

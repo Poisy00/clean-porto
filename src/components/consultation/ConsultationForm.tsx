@@ -200,7 +200,7 @@ export function ConsultationForm({
             onKeyDown={handleKeyDown}
             placeholder={step.placeholder}
             className={baseInputClasses}
-            autoFocus
+
           />
         )
 
@@ -213,7 +213,7 @@ export function ConsultationForm({
             placeholder={step.placeholder}
             rows={4}
             className={`${baseInputClasses} resize-none leading-relaxed`}
-            autoFocus
+
           />
         )
 
