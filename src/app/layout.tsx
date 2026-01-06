@@ -33,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${inter.variable} ${interTight.variable} ${geistMono.variable} antialiased font-body bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-50`}
       >
         <ThemeProvider
